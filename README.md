@@ -49,6 +49,7 @@ Future Plans
 Repository Structure
 --------------------
 
+```
 /
 ├── README.md
 ├── Version5.0PhysicsData_SAFE.txt
@@ -65,6 +66,7 @@ Repository Structure
 ├── scripts
 │   ├── test_regression_api.js
 │   ├── example_csv_import.js
+```
 
 License
 -------

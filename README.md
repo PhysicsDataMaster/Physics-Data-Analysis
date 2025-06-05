@@ -49,7 +49,23 @@ Future Plans
 Repository Structure
 --------------------
 
-See folder structure below.
+/
+├── README.md
+├── Version5.0PhysicsData_SAFE.txt
+├── HelpDialog_PLAN.txt
+├── HelpDialog_v5.txt (to be generated)
+├── Version_History.txt
+├── examples
+│   ├── example_data.csv
+│   ├── example_interval_analysis.png
+│   ├── example_regression_results.png
+├── docs
+│   ├── HelpDialog_structure.md
+│   ├── Regression_API_examples.md
+├── scripts
+│   ├── test_regression_api.js
+│   ├── example_csv_import.js
+
 
 License
 -------

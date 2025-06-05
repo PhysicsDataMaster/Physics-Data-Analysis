@@ -66,8 +66,7 @@ Repository Structure
 │   ├── test_regression_api.js
 │   ├── example_csv_import.js
 
-
 License
 -------
 
-This project is shared publicly for educational and project development purposes.
+This project is shared publicly for collaborative development purposes and to support ongoing project work.

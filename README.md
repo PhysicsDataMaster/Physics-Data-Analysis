@@ -38,6 +38,8 @@ This project is designed to be used within Google Sheets.
 5. Refresh the Sheet → the "CSV Manager" menu will appear.
 6. Use menu options to manage data, perform interval analysis, run regression, and more.
 
+Disclamer - Made with help of ChatGPT 4o
+
 Future Plans
 ------------
 

@@ -1,76 +1,88 @@
 # Physics-Data-Analysis
-Master scripts, tools, and documentation for Physics Data Collection project — Google Sheets Apps Script + supporting tools.
 
-Physics Data Analysis
-=====================
+Scripts, tools, and documentation for the **Physics Data Collection & Analysis** system — built using Google Sheets Apps Script + Sidebar UI architecture.
 
-Master scripts, tools, and documentation for the Physics Data Analysis project.
+---
 
-This project uses Google Sheets Apps Script and supporting tools to assist with:
+## ⚙️ Features
 
-- CSV import and management
-- Sheet organization and home pages
-- Data validation
-- Interval analysis and reduction
-- Regression processing (with modular framework)
-- Error checking and logging
-- User-friendly menus and Help dialog
+This project includes a full modular system for managing experimental physics data inside Google Sheets:
 
-Project Components
-------------------
+- 📥 CSV import and Drive folder mapping
+- 🧾 Sheet organization and custom home pages
+- ✅ Data validation and structural checks
+- 📊 Interval analysis and reduction workflows
+- 📈 Custom regression engine (LaTeX-compatible input + selectable algorithms)
+- 🪲 Error logging with visual debugging
+- 🧠 Sidebar Help Dialog with glossary, tips, and full source view
 
-- Version5.0PhysicsData_SAFE.txt — Master Google Apps Script (Version 5.0)
-- HelpDialog_v5.txt — Technical Help dialog (in progress)
-- HelpDialog_PLAN.txt — HelpDialog generation plan
-- Version_History.txt — Version history and changelog
-- Example CSV files (optional)
-- Example outputs (optional)
+---
 
-Usage
------
+## 🔢 Current Version: **v5.1**
 
-This project is designed to be used within Google Sheets.
+This is the latest stable release — now with **split HelpDialog architecture**, developer roadmap for v5.2, and cleaned file naming for GitHub compatibility.
 
-1. Open your target Google Sheet.
-2. Open Apps Script editor.
-3. Import or paste Version5.0PhysicsData_SAFE.txt.
-4. Save and run onOpen() once.
-5. Refresh the Sheet → the "CSV Manager" menu will appear.
-6. Use menu options to manage data, perform interval analysis, run regression, and more.
+---
 
-Disclamer - Made with help of ChatGPT 4o
+## 📁 Project Files
 
-Future Plans
-------------
+| File Name            | Purpose                                                       |
+|---------------------|---------------------------------------------------------------|
+| `Code`              | Main Google Apps Script — creates menus and system logic      |
+| `HelpDialog_Main`   | Sidebar help system — sections 1–2, 4–12 (Overview + Guide)    |
+| `HelpDialog_Functions1` | A–M Function reference (fully expanded)                   |
+| `HelpDialog_Functions2` | N–Z Function reference + roadmap to v5.2 (planned features) |
+| `RegressionDialog`  | Regression entry form with LaTeX preview + parameter input     |
 
-- Add external Regression API integration (planned)
-- Add CSV archive feature (planned)
-- Add smoothing and advanced data processing options
-- Expand HelpDialog with more examples
+All files are `.txt` format (no extensions) for easier GitHub use. Copy/paste them into your Apps Script environment.
 
-Repository Structure
---------------------
+---
 
-```
-/
-├── README.md
-├── Version5.0PhysicsData_SAFE.txt
-├── HelpDialog_PLAN.txt
-├── HelpDialog_v5.txt (to be generated)
-├── Version_History.txt
-├── examples
-│   ├── example_data.csv
-│   ├── example_interval_analysis.png
-│   ├── example_regression_results.png
-├── docs
-│   ├── HelpDialog_structure.md
-│   ├── Regression_API_examples.md
-├── scripts
-│   ├── test_regression_api.js
-│   ├── example_csv_import.js
-```
+## 🚀 Setup Instructions
 
-License
--------
+1. **Create a Google Sheet** and open **Extensions > Apps Script**.
+2. Copy contents of each file into the Apps Script Editor:
+   - Paste `Code` into `Code.gs`
+   - Add new HTML files:
+     - `HelpDialog_Main`, `HelpDialog_Functions1`, `HelpDialog_Functions2`, `RegressionDialog`
+3. Save all files and reload the spreadsheet.
+4. Menu will appear as **“CSV Manager”**.
+5. Use menu options to:
+   - Import data
+   - Validate structure
+   - Analyze intervals
+   - Run regression
+   - Open contextual help from the sidebar
 
-This project is shared publicly for collaborative development purposes and to support ongoing project work.
+---
+
+## 🧭 HelpDialog Architecture
+
+The help system is split for performance and clarity:
+
+- **HelpDialog_Main** — Main tutorial, overview, glossary, formatting tips
+- **HelpDialog_Functions1** — Covers all A–M functions with examples and usage
+- **HelpDialog_Functions2** — Covers N–Z and includes full roadmap (v5.2 preview)
+- **RegressionDialog** — Custom form UI with LaTeX preview and parameter inputs
+
+Use the in-menu **Help** button to access the sidebar inside Sheets.
+
+---
+
+## 🔮 Future Features (v5.2 Planned)
+
+These features are already scaffolded in v5.1 and will activate once developed:
+
+- `postRegressionResults()` → Push to REST APIs
+- `validateRegressionResults()` → Auto quality checks + error summaries
+- `exportRegressionResults()` → Export to CSV / JSON
+- `archiveCSVFiles()` → Move processed CSVs to Drive archive
+- `batchRunRegressions()` → Multi-sheet, multi-model regression mode
+
+---
+
+## 📜 License
+
+This repository is published for educational and collaborative development purposes. You may fork, adapt, and use with attribution.
+
+> Originally structured with the help of ChatGPT-4o and refined through collaborative iterations.

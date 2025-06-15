@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: Arial, sans-serif; padding: 10px; }
+      label { display: block; margin-top: 10px; }
+      input[type="text"], textarea { width: 100%; box-sizing: border-box; }
+      select { width: 100%; }
+      button { margin-top: 15px; }
+      #latexPreview { margin-top: 10px; padding: 10px; background: #f8f8f8; border-left: 4px solid #888; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <h2>Custom Regression</h2>
+    <form id="regressionForm">
+      <label for="formula">Regression Formula (JavaScript syntax):</label>
+      <textarea id="formula" rows="4" placeholder="e.g., A * Math.exp(-B * t) * Math.cos(C * t + D)"></textarea>
+
+      <label for="latex">LaTeX Preview (optional):</label>
+      <input type="text" id="latex" placeholder="e.g., A e^{-Bt} \cos(Ct + D)" oninput="updateLatexPreview()">
+      <div id="latexPreview">LaTeX preview will appear here...</div>
+
+      <label for="parameters">Initial Parameters (JSON format):</label>
+      <textarea id="parameters" rows="2" placeholder='e.g., {"A":1, "B":0.1, "C":2, "D":0}'></textarea>
+
+      <label for="algorithm">Select Algorithm:</label>
+      <select id="algorithm">
+        <option value="Nelder-Mead">Nelder-Mead</option>
+        <option value="Gauss-Newton">Gauss-Newton</option>
+        <option value="Levenberg-Marquardt">Levenberg-Marquardt</option>
+        <option value="BFGS">BFGS</option>
+      </select>
+
+      <label for="range">Data Range (e.g., Sheet1!A2:B100):</label>
+      <input type="text" id="range" placeholder="Enter data range">
+
+      <button type="button" onclick="submitRegression()">Run Regression</button>
+    </form>
+
+    <script>
+      function updateLatexPreview() {
+        const latex = document.getElementById('latex').value;
+        document.getElementById('latexPreview').innerHTML = `\\[ ${latex} \\]`;
+        MathJax.typeset();
+      }
+
+      function submitRegression() {
+        const formula = document.getElementById('formula').value.trim();
+        const algorithm = document.getElementById('algorithm').value;
+        const dataRange = document.getElementById('range').value.trim();
+        const parameters = document.getElementById('parameters').value.trim();
+
+        if (!formula || !dataRange) {
+          alert("Please fill in both the formula and data range.");
+          return;
+        }
+
+        google.script.run.withSuccessHandler(() => {
+          google.script.host.close();
+        }).runRegressionFromDialog(formula, algorithm, dataRange, parameters);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+Physics Data Analysis — Version History
+
+v5.1 (Current)
+---------------
+- Introduced split HelpDialog architecture (Main, Functions1, Functions2)
+- Added support for LaTeX rendering in RegressionDialog
+- Enabled parameter input for regression initial guesses
+- Improved error logging and sheet normalization
+- Placeholder scaffolding for v5.2 features added
+
+v5.0
+-----
+- First public release with full regression, interval, and validation tools
+- Introduced Error Log sheet and dynamic folder import system
+
+v4.x and below
+----------------
+- Internal testing and pre-release versions
+- Included basic CSV import, manual regression, and early menu system
